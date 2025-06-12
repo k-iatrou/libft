@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kiatrou <kiatrou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/11 14:45:55 by kiatrou           #+#    #+#             */
-/*   Updated: 2025/06/12 14:58:06 by kiatrou          ###   ########.fr       */
+/*   Created: 2025/06/12 14:48:06 by kiatrou           #+#    #+#             */
+/*   Updated: 2025/06/12 14:49:18 by kiatrou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	char	*char_dest;
-	char	*char_src;
-
-	char_dest = (char *)dest;
-	char_src = (char *)src;
-	if (dest == NULL)
-		return (NULL);
-	for (int i=0; i<n; i++)
-		char_dest[i] = char_src[i];
-
-	return dest;
+	
 }

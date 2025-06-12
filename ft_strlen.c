@@ -6,7 +6,7 @@
 /*   By: kiatrou <kiatrou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 13:12:21 by kiatrou           #+#    #+#             */
-/*   Updated: 2025/06/11 13:46:58 by kiatrou          ###   ########.fr       */
+/*   Updated: 2025/06/12 14:45:39 by kiatrou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ size_t	ft_strlen(const char *s)
 	counter = 0;
 	if (s >= 32 || s <= 126)
 		counter ++;
-	return (0);
+	return (counter);
 }

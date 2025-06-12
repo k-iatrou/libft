@@ -6,13 +6,13 @@
 /*   By: kiatrou <kiatrou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:09:12 by kiatrou           #+#    #+#             */
-/*   Updated: 2025/06/11 14:49:05 by kiatrou          ###   ########.fr       */
+/*   Updated: 2025/06/12 14:24:49 by kiatrou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*p;
 	size_t	i;
