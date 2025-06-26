@@ -6,22 +6,20 @@
 /*   By: kiatrou <kiatrou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:09:12 by kiatrou           #+#    #+#             */
-/*   Updated: 2025/06/12 14:24:49 by kiatrou          ###   ########.fr       */
+/*   Updated: 2025/06/26 21:08:39 by kiatrou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	bzero(void *s, size_t n)
 {
-	unsigned char	*p;
-	size_t	i;
+	char	*tmp_ptr;
 
-	p = s;
-	i = 0;
-	while (i < n)
+	tmp_ptr = (char *) s;
+	while (n > 0)
 	{
-		p[i] = 0;
-		i++;
+		*(tmp_ptr++) = 0;
+		n--;
 	}
 }

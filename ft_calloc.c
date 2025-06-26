@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kiatrou <kiatrou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/11 13:12:21 by kiatrou           #+#    #+#             */
-/*   Updated: 2025/06/26 18:43:31 by kiatrou          ###   ########.fr       */
+/*   Created: 2025/06/26 21:19:57 by kiatrou           #+#    #+#             */
+/*   Updated: 2025/06/26 21:41:22 by kiatrou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	*ft_calloc(size_t count, size_t size)
 {
-	int	counter;
+	unsigned char	*tmp;
+	size_t			i;
 
-	counter = 0;
-	while (s[counter])
-		counter++;
-	return (counter);
+	i = 0;
+	tmp = malloc(count * size);
+	if (!tmp)
+		return (NULL);
+	while (i < count * size)
+		tmp[i++] = 0;
+	return (tmp);
 }

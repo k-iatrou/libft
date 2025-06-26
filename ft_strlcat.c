@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kiatrou <kiatrou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/11 13:12:21 by kiatrou           #+#    #+#             */
-/*   Updated: 2025/06/26 18:43:31 by kiatrou          ###   ########.fr       */
+/*   Created: 2025/06/16 13:06:21 by kiatrou           #+#    #+#             */
+/*   Updated: 2025/06/26 21:35:19 by kiatrou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int	counter;
+	size_t	src_len;
+	size_t	dst_len;
 
-	counter = 0;
-	while (s[counter])
-		counter++;
-	return (counter);
+	if (dst_len >= dstsize)
+		dst_len = dstsize;
+	if (dst_len == dstsize)
+		return (dstsize + src_len);
+	if (src_len < dstsize - dst_len)
+		ft_memcpy(dst + dst_len, src, src_len + 1);
+	else
+	{
+		ft_memcpy(dst + dst_len, src, dstsize - dst_len - 1);
+		dst[dstsize - 1] = '\0';
+	}
+	return (dst_len + src_len);
 }

@@ -6,20 +6,30 @@
 /*   By: kiatrou <kiatrou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 14:23:07 by kiatrou           #+#    #+#             */
-/*   Updated: 2025/06/12 14:42:48 by kiatrou          ###   ########.fr       */
+/*   Updated: 2025/06/26 21:33:18 by kiatrou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
- #include "libft.h"
+#include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	
-	char	*char_dest = (char *)dest;
-	char	*char_src = (char *)src;	
+	char	*c_src;
+	char	*c_dst;
+	size_t	i;
 
-	for (int i=0; i < n; i++)
-		char_dest[i] = char_src[i];
-
-	return dest;
+	if (!dst && !src)
+		return (NULL);
+	c_src = (char *) src;
+	c_dst = (char *) dst;
+	i = 0;
+	if (c_dst > c_src)
+		while (len-- > 0)
+			c_dst[len] = c_src[len];
+	else
+	{
+		while (i++ < len)
+			c_dst[i] = c_src[i];
+	}
+	return (dst);
 }
