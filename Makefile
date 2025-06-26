@@ -12,24 +12,33 @@
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-SRCS = $(wildcard *.c)
+SRCS = $(filter-out main.c, $(wildcard *.c))
 OBJS = $(SRCS:.c=.o)
 NAME = libft.a
-all: $(NAME)
-$(NAME): $(OBJS)
-    ar rcs $@ $^
-%.o: %.c
-    $(CC) $(CFLAGS) -c $< -o $@
-clean:
-    rm -f $(OBJS)
-fclean: clean
-    rm -f $(NAME)
-re: fclean all
 MAIN = main
 MAIN_SRC = main.c
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(AR) rcs $@ $^
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJS)
+
+fclean: clean
+	rm -f $(NAME) $(MAIN)
+
+re: fclean all
+
 $(MAIN): $(MAIN_SRC) $(NAME)
-    @echo "Compiling main test program $@"
-    $(CC) $(CFLAGS) $(MAIN_SRC) -L. -lft -o $(MAIN)
+	@echo "Compiling main test program $@"
+	$(CC) $(CFLAGS) $(MAIN_SRC) -L. -lft -o $@
+
 run: $(MAIN)
-    ./$(MAIN)
-.PHONY: all clean fclean re
+	./$(MAIN)
+
+.PHONY: all clean fclean re run
