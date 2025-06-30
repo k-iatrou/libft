@@ -6,11 +6,13 @@
 /*   By: kiatrou <kiatrou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 21:13:10 by kiatrou           #+#    #+#             */
-/*   Updated: 2025/06/26 21:19:43 by kiatrou          ###   ########.fr       */
+/*   Updated: 2025/06/27 15:29:52 by kiatrou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int	ft_isspace(int c);
 
 int	ft_atoi(const char *str)
 {
