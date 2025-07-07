@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kiatrou <kiatrou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 14:07:33 by kiatrou           #+#    #+#             */
-/*   Updated: 2025/06/26 21:37:14 by kiatrou          ###   ########.fr       */
+/*   Created: 2025/07/07 14:38:21 by kiatrou           #+#    #+#             */
+/*   Updated: 2025/07/07 16:01:10 by kiatrou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,13 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	unsigned int	i;
-	char			cc;
-
-	cc = (char) c;
-	i = 0;
-	while (s[i])
+	while (*s)
 	{
-		if (s[i] == cc)
-		{
-			return ((char *) &s[i]);
-			i++;
-		}
+		if (*s == (char)c)
+			return ((char *) s);
+		s++;
 	}
-	if (s[i] == cc)
-		return ((char *) &s[i]);
+	if ((char)c == '\0')
+		return ((char *) s);
 	return (NULL);
 }

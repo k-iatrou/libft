@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchar.c                                      :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kiatrou <kiatrou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 19:24:18 by kiatrou           #+#    #+#             */
-/*   Updated: 2025/06/26 21:37:56 by kiatrou          ###   ########.fr       */
+/*   Updated: 2025/07/07 16:00:28 by kiatrou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchar(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	unsigned int	i;
-	char			*res;
-	char			cc;
+	const char	*last;
 
-	cc = (char) c;
-	res = NULL;
-	i = 0;
-	while (s[i])
+	last = NULL;
+	while (*s)
 	{
-		if (s[i] == cc)
-		{
-			res = (char *) &s[i];
-			i++;
-		}
+		if (*s == (char)c)
+			last = s;
+		s++;
 	}
-	if (s[i] == c)
-		res = (char *) &s[i];
-	return (res);
+	if ((char)c == '\0')
+		return ((char *) s);
+	return ((char *) last);
 }
